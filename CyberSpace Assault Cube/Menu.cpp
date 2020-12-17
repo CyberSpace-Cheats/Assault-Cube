@@ -24,6 +24,7 @@ bool b_aimbotteamcheck = false;
 bool b_drawline = false;
 bool b_espteamcheck = false;
 bool b_boxesp = false;
+bool b_healthbar = false;
 
 bool b_drawfov = false;
 
@@ -98,6 +99,7 @@ void Menu::DrawMenu()
                 {
                     ImGui::Checkbox("Line ESP", &b_drawline);
                     ImGui::Checkbox("Box ESP", &b_boxesp);
+                    ImGui::Checkbox("Health Bar", &b_healthbar);
                     ImGui::Checkbox("Team Check", &b_espteamcheck);
                 }
                 ImGui::EndChild();

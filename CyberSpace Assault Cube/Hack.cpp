@@ -9,6 +9,7 @@ extern bool b_aimbot;
 extern bool b_drawline;
 extern bool b_espteamcheck;
 extern bool b_boxesp;
+extern bool b_healthbar;
 
 extern bool b_drawfov;
 
@@ -64,6 +65,9 @@ void Hack::Loop()
                             
                             if (b_boxesp)
                                 ESP::drawBox(LocalPlayer, ent, viewMatrix, b_espteamcheck);
+
+                            if (b_healthbar)
+                                ESP::drawBar(LocalPlayer, ent, viewMatrix, b_espteamcheck);
 
                             players_alive++;
                             entListVector.push_back(ent);
