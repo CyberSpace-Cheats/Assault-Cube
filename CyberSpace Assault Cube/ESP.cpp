@@ -84,32 +84,24 @@ void ESP::drawBar(Player* LocalPlayer, Player* ent, float matrix[16], bool teamc
 			auto center			= ( width / 2 );
 
 			float healthPerc	= ent->Health / 100.0f;
-			float armorPerc		= ent->Armor / 100.0f;
 
 			int healthHeight	= healthPerc * height;
-			int armorHeight		= armorPerc * height;
 
 			auto x				= vHead.x + ( center + 1.5f );
 			auto y				= vScreen.y - ( height / 10.0f );
 
-			auto x_armor		= vHead.x - ( center + 1.5f );
-			auto y_armor		= vScreen.y - ( height / 10.0f );
-
 			auto _health = ( ( height ) - ( -healthHeight + height ) );
-			auto _armor = ( ( height ) - ( -armorHeight + height) );
 
 			if (teamcheck)
 			{
 				if (LocalPlayer->TeamNum != ent->TeamNum)
 				{
-					Menu::DrawBox(ImVec2(x, y), ImVec2(2.f, (-_health)), ImVec4(255, 0, 0, 255), 1.f);
-					Menu::DrawBox(ImVec2(x_armor, y_armor), ImVec2(2.f, (-_armor)), ImVec4(0, 0, 255, 255), 1.f);
+					Menu::DrawBox(ImVec2(x, y), ImVec2(2.f, (-_health)), ImVec4(0, 255, 255, 255), 1.f);
 				}			
 			}
 			else
 			{
-				Menu::DrawBox(ImVec2(x, y), ImVec2(2.f, (-_health)), ImVec4(255, 0, 0, 255), 1.f);
-				Menu::DrawBox(ImVec2(x_armor, y_armor), ImVec2(2.f, (-_armor)), ImVec4(0, 0, 255, 255), 1.f);
+				Menu::DrawBox(ImVec2(x, y), ImVec2(2.f, (-_health)), ImVec4(0, 255, 255, 255), 1.f);
 			}
 		}
 	}
